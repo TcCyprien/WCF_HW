@@ -1,0 +1,8 @@
+---
+  - hosts: k8s
+    tasks:
+        - name: Deploys authapi.py
+          command: kubectl create -f /opt/wcfauthapi/authapi.yml
+
+        - name: Deploy service
+          command: kubectl create -f /opt/wcfauthapi/authapi-service.yml
